@@ -2,6 +2,6 @@
     display: none !important;
 }
 
-.hi{
-    background-size: cover;
+.active{
+    background-color: #15803d;
 }

@@ -66,8 +66,8 @@
                     <!-- Categories section  -->
                     <div class="col-span-2 sm:col-span-1 flex sm:block flex-col justify-center mx-auto w-full text-center sm:text-left">
                         <h1 class="font-bold text-xl">Categories</h1>
-                        <ul id="categorieDiv">
-                            <li class="hover:bg-[#15803d] hover:text-white p-1 rounded-sm font-semibold"><a href="">All Trees</a><i id="Categories-1" class="categoriesArrowDown fa-solid fa-angle-down"></i></li>
+                        <ul id="categorieDiv" class="">
+                            <!-- <li class="hover:bg-[#15803d] hover:text-white p-1 rounded-sm font-semibold"><a href="">All Trees</a><i id="Categories-1" class="categoriesArrowDown fa-solid fa-angle-down"></i></li> -->
                             <!-- <li class="hover:bg-[#15803d] hover:text-white p-1 rounded-sm font-semibold"><a href="">Fruit Trees</a><i id="Categories-1" class="categoriesArrowDown fa-solid fa-angle-down"></i></li>
                             <li class="hover:bg-[#15803d] hover:text-white p-1 rounded-sm font-semibold"><a href="">Flowering Trees</a><i id="Categories-1" class="categoriesArrowDown fa-solid fa-angle-down"></i></li>
                             <li class="hover:bg-[#15803d] hover:text-white p-1 rounded-sm font-semibold"><a href="">Shade Trees</a><i id="Categories-1" class="categoriesArrowDown fa-solid fa-angle-down"></i></li>
@@ -130,25 +130,7 @@
                     </div>
 
                 </div>
-                <div>
-                    <!-- Open the modal using ID.showModal() method -->
-                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-                    <div class="modal-box w-[60%]">
-                        <h1 class="text-3xl font-bold">Tree Name</h1>
-                        <img class="h-full w-full" src="./assets/about.png" alt="">
-                        <h2 class="font-bold text-xl my-3">Categories: <span class="font-normal">Fruit Trees</span></h2>
-                        <h2 class="font-bold text-xl my-3">Price: <Span class="font-normal"v>1200$</Span></h2>
-                        <p class="font-bold text-xl my-3">Description: <span class="font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, harum ea nobis, eos placeat magnam quia aliquid ex aliquam tempore minima accusamus quidem dolores? Itaque similique excepturi eaque laudantium nulla.</span></p>
-                        
-                        <div class="modal-action">
-                        <form method="dialog">
-                            <!-- if there is a button in form, it will close the modal -->
-                            <button class="btn">Close</button>
-                        </form>
-                        </div>
-                    </div>
-                    </dialog>
-                </div>
+
                 <!-- About the campaign section -->
                 <section class="mt-[100px]">
                     <h1 class="text-center text-3xl font-bold ">About the Campaign</h1>
@@ -182,15 +164,15 @@
                 <h1  class="text-center text-3xl font-bold mb-[50px]">Our Impact</h1>
                 <div class="flex flex-col items-center md:flex-row md:justify-between gap-5 md:mx-[130px]"> 
 
-                    <div class="bg-white w-[80%] md:w-1/3 text-center py-10 rounded-2xl ">
+                    <div class="bg-white hover:bg-green-300 hover:p-11 w-[80%] md:w-1/3 text-center py-10 rounded-2xl ">
                         <h1 class="text-2xl font-bold text-green-700"><span>500</span>k+</h1>
                         <span>Trees Planted</span>
                     </div>
-                    <div class="bg-white w-[80%] md:w-1/3 text-center py-10 rounded-2xl">
+                    <div class="bg-white hover:bg-green-300  hover:p-11 w-[80%] md:w-1/3 text-center py-10 rounded-2xl">
                         <h1  class="text-2xl font-bold text-green-700"><span>120</span>+</h1>
                         <span>Communities Involved</span>
                     </div>
-                    <div class="bg-white w-[80%] md:w-1/3 text-center py-10 rounded-2xl">
+                    <div class="bg-white hover:bg-green-300 hover:p-11 w-[80%] md:w-1/3 text-center py-10 rounded-2xl">
                         <h1  class="text-2xl font-bold text-green-700"><span>30</span>+</h1>
                         <span>Countries Reached</span>
                     </div>
@@ -217,6 +199,23 @@
             </div>
         </section>
     </main>
+                <div id="modalDiv">
+                    <!-- <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                    <div class="modal-box">
+                        <h1 class="text-3xl font-bold">Tree Name</h1>
+                        <img class="h-full w-full" src="./assets/about.png" alt="">
+                        <h2 class="font-bold text-xl my-3">Categories: <span class="font-normal">Fruit Trees</span></h2>
+                        <h2 class="font-bold text-xl my-3">Price: <Span class="font-normal"v>1200$</Span></h2>
+                        <p class="font-bold text-xl my-3">Description: <span class="font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, harum ea nobis, eos placeat magnam quia aliquid ex aliquam tempore minima accusamus quidem dolores? Itaque similique excepturi eaque laudantium nulla.</span></p>
+                        
+                        <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn">Close</button>
+                        </form>
+                        </div>
+                    </div>
+                    </dialog> -->
+                </div>
     <footer class=" bg-[#14532d] p-5">
         <h1 class="text-center text-white">© 2025 Green Earth. All Rights Reserved.</h1>
     </footer>
