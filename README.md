@@ -86,14 +86,19 @@ https://openapi.programming-hero.com/api/plant/1
 
 
 #### 1) What is the difference between var, let, and const?
+###  Answer: 'var' is a function scoped it can use before declare but value is undefined. 'let' is a block-scoped it can't be use before declare and value can be change. 'const' is a block scoped it is same of let can't be use before declare but value can't be change.
 
 #### 2) What is the difference between map(), forEach(), and filter()? 
+### Answer: map() iterates applies a function and returns a new array of new values . forEach() interates over an array and executes a function retun undefined. and filere() iterates, applies a condition and rerurn a new array.
 
 #### 3) What are arrow functions in ES6?
+### Answer: Arrow functions in ES6 are a shorter syntax for writing functions using => .
 
 #### 4) How does destructuring assignment work in ES6?
+### Answer: In ES6 destructuring assignment allow to extract values from arrays or objects into separate variables in a short way.
 
 #### 5) Explain template literals in ES6. How are they different from string concatenation?
+### Answer: template literals are string literals enclosed by backticks (`) that allow interpolation and multiline strings easily.
 
 ## ⚙️ Functionalities 
 

@@ -1,13 +1,16 @@
+manageSpinnerFn(true);
+
+// all plants api calling
 fetch("https://openapi.programming-hero.com/api/plants")
   .then((response) => response.json())
   .then((data) => allPlantsFn(data.plants));
 
+
+// all plants api calling
 function allPlantsFn(allPlants) {
   // console.log(allPlants)
-
   const cartDiv = document.getElementById("cartDiv");
   cartDiv.innerHTML = "";
-
   allPlants.forEach((plants) => {
     // console.log(plants)
     const nweCartDiv = document.createElement("div");
@@ -26,32 +29,51 @@ function allPlantsFn(allPlants) {
     cartDiv.append(nweCartDiv);
     // console.log(cartDiv)
   });
+  manageSpinnerFn(false);
 }
 
+
+// this is spinner function
+function manageSpinnerFn(status) {
+  if (status == true) {
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById("apiContent").classList.add("hidden");
+  } else {
+    document.getElementById("spinner").classList.add("hidden");
+    document.getElementById("apiContent").classList.remove("hidden");
+  }
+}
+
+// this is category hide and show function for small devices
+document.getElementById("CatArrwD").addEventListener("click", function () {
+  document.getElementById("categorieDiv").classList.toggle("hidden");
+});
+
+
+// all category link calling
 fetch("https://openapi.programming-hero.com/api/categories")
   .then((response) => response.json())
   .then((data) => categoryFn(data.categories));
 
+  // all category colling function 
 function categoryFn(category) {
   // console.log(category)
-
   const categorieDiv = document.getElementById("categorieDiv");
   categorieDiv.innerHTML = "";
 
   category.forEach((category) => {
-    // console.log(category)
     const nweCatLi = document.createElement("div");
 
     nweCatLi.innerHTML = `
-            <button class="hover:text-white activeID  hover:bg-[#15803d] w-full font-semibold sm:text-left p-1 rounded-md" id="Categories_${category.id}" onclick="callCategory(${category.id})" href="">${category.category_name}</button><i id="CatArrwD_${category.id}" class="categoriesArrowDown fa-solid fa-angle-down"></i>
+            <button class="hover:text-white activeID  hover:bg-[#15803d] w-full font-semibold sm:text-left p-1 rounded-md" id="Categories_${category.id}" onclick="callCategory(${category.id})" href="">${category.category_name}</button>
         `;
     categorieDiv.append(nweCatLi);
-    // console.log(category.id)
   });
 }
 
+
+// call category function for all category link 
 function callCategory(id) {
-  // alert(typeof(id))
   const url = `https://openapi.programming-hero.com/api/category/${id}`;
   // console.log(url)
   fetch(url)
@@ -60,7 +82,6 @@ function callCategory(id) {
 
   function categorieFN(categories) {
     // console.log(categories)
-
     const cartDiv = document.getElementById("cartDiv");
     cartDiv.innerHTML = "";
 
@@ -94,15 +115,12 @@ function callCategory(id) {
     btn.classList.remove("active");
     document.getElementById(`Categories_${id}`).classList.add("active");
   });
+  manageSpinnerFn(false);
 }
 
-// onclick="callCategory(${category.id})"
-// onclick="showModal(${plant.id})"
-// onclick="my_modal_5.showModal()"
 
+// this is a modal showing function include data form API 
 function ShowModal(id) {
-  // alert(id)
-
   const url = "https://openapi.programming-hero.com/api/plant/" + id;
   fetch(url)
     .then((rec) => rec.json())
@@ -135,28 +153,29 @@ function ShowModal(id) {
     // console.log(modaldiv)
     document.getElementById("my_modal_5").showModal();
   }
-
-  //   console.log(hi)
 }
 
+
+
 const Cprice = document.getElementById("Cprice");
-let prices = 0; 
+let prices = 0;
 let divID = 0;
 
 function cartHistoryFN(id, name, price) {
-    priceFilter = parseInt(price);
-    prices = prices + priceFilter;
+  priceFilter = parseInt(price);
+  prices = prices + priceFilter;
 
-    divID = divID + 1;
-    let currentPrice = prices;
-    Cprice.innerHTML = `${currentPrice}`;
+  divID = divID + 1;
+  let currentPrice = prices;
+  Cprice.innerHTML = `${currentPrice}`;
 
-    const historyDiv = document.getElementById("historyDiv");
-    const newHistroyDiv = document.createElement("div");
-    newHistroyDiv.id = `item-${divID}`;
-    newHistroyDiv.className = "bg-[#f0fdf4] flex justify-between items-center p-2";
+  const historyDiv = document.getElementById("historyDiv");
+  const newHistroyDiv = document.createElement("div");
+  newHistroyDiv.id = `item-${divID}`;
+  newHistroyDiv.className =
+    "bg-[#f0fdf4] flex justify-between items-center p-2";
 
-    newHistroyDiv.innerHTML = `
+  newHistroyDiv.innerHTML = `
         <div>
             <h1>${name}</h1>
             <span>৳${price} x 1</span>
@@ -166,14 +185,14 @@ function cartHistoryFN(id, name, price) {
         </span>
     `;
 
-    historyDiv.appendChild(newHistroyDiv);
+  historyDiv.appendChild(newHistroyDiv);
 }
 
 function clerrHistoryFN(divId, price) {
-    const div = document.getElementById(divId);
-    if (div) {
-        div.remove();
-        prices = prices - parseInt(price);
-        Cprice.innerHTML = `${prices}`;
-    }
+  const div = document.getElementById(divId);
+  if (div) {
+    div.remove();
+    prices = prices - parseInt(price);
+    Cprice.innerHTML = `${prices}`;
+  }
 }
